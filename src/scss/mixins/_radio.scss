@@ -1,0 +1,28 @@
+@mixin radio() {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    input {
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #000;
+        position: relative;
+        border-radius: 50%;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        &:checked::before {
+            opacity: 1;
+        }
+    }
+}

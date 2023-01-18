@@ -1,0 +1,11 @@
+@function vw($target, $screen: 0) {
+    $size: 0;
+
+    @if $screen == 0 {
+        $size: 1920;
+    } @else if $screen == 1 {
+        $size: 768;
+    }
+
+    @return calc($target / $size) * 100vw;
+}

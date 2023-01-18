@@ -1,0 +1,25 @@
+* {
+    font-family: "Heebo", sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    &.scroll-hide {
+        overflow: hidden;
+    }
+}
+
+.page {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #6bb7b2;
+    font-size: vw(102);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: vw(90);
+}

@@ -1,0 +1,38 @@
+.breadcrumbs {
+    margin: 15px 0 50px 0;
+    position: relative;
+    z-index: 5;
+
+    &__item {
+        display: inline-block;
+        padding-right: 24px;
+        position: relative;
+
+        a,
+        span {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 136%;
+            letter-spacing: 0.04em;
+            color: #FFFFFF;
+            transition: all .3s;
+        }
+
+        a {
+            &:hover {
+                text-shadow: .5px 0 0 currentColor;
+            }
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+
+        &::after {
+            position: absolute;
+            content: '>';
+            top: 2px;
+            right: 6px;
+        }
+    }
+}
