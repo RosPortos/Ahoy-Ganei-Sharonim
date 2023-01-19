@@ -1,12 +1,29 @@
 .promo {
-    margin-top: vw(54px);
+    margin-top: vw(70px);
     position: relative;
+    height: vw(587px);
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../img/decor/decor1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 895px;
+        height: 427px;
+        z-index: -1;
+        left: 56%;
+        transform: translateX(-50%);
+        top: -79px;
+        pointer-events: none;
+    }
 }
 .promo__wrap {
     overflow: hidden;
     display: flex;
     justify-content: center;
     gap: vw(16px);
+    height: 100%;
 }
 .promo-item {
     width: vw(220px);
