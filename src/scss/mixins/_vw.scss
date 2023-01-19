@@ -7,5 +7,6 @@
         $size: 768;
     }
 
-    @return calc($target / $size) * 100vw;
+    $vw-context: ($size * 0.01) * 1px;
+    @return calc($target/$vw-context) * 1vw;
 }
