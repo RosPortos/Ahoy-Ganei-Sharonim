@@ -1,0 +1,25 @@
+.promo {
+    margin-top: vw(54px);
+    position: relative;
+}
+.promo__wrap {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: vw(16px);
+}
+.promo-item {
+    width: vw(220px);
+    opacity: 0.34;
+    cursor: pointer;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.promo-item--active {
+    width: vw(920px);
+    opacity: 1;
+}
