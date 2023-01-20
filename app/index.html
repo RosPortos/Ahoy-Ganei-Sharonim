@@ -65,11 +65,12 @@
 						.כי לחיות טוב זו אומנות
 					</p>
 				</div>
-				<div class="about-top__video">
+				<div class="about-top__video" id="about-top__video">
 					<div class="about-top-preview">
 						<img src="img/section/about-top-img.png" alt="img">
-						<button class="play-btn" data-video-type="youtube" data-video-modal="-KH6ZSavJ6Y"></button>
+						<button class="play-btn" data-video-type="youtube" data-video-modal=""></button>
 					</div>
+					<div id="player" data-video-id="-KH6ZSavJ6Y"></div>
 				</div>
 			</div>
 			<div class="about-list">
@@ -177,6 +178,17 @@
 						</div>
 					</div>
 				</form>
+			</div>
+		</div>
+
+		<div class="modal video-modal" id="video-modal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<button class="modal-close" aria-label="Close modal"></button>
+					<div class="modal-video">
+						<div id="modal-video-iframe"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 
