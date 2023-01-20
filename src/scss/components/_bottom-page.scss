@@ -1,13 +1,99 @@
 .page-bottom {
-    margin-top: 190px;
+    margin-top: vw(180px);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../img/decor/decor3.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40.395833vw;
+        height: 35.541667vw;
+        z-index: -1;
+        right: vw(236px);
+        top: vw(-451px);
+        pointer-events: none;
+    }
 }
 .form {
+    width: vw(1125px);
+    min-height: vw(340px);
+    background-color: #f8e7d4;
+    padding: vw(30px) vw(70px) vw(47px);
+    h2 {
+        color: #000000;
+        font-size: vw(40px);
+        font-weight: 400;
+        text-align: center;
+    }
+    form {
+        margin-top: vw(21px);
+    }
+    .form__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(20px);
+    }
+    .form__input {
+        width: 100%;
+        height: vw(56px);
+        border-radius: vw(20px);
+        background-color: #ffffff;
+        color: #000000;
+        font-size: vw(25px);
+        font-weight: 400;
+        padding: 0 vw(24px);
+        border: none;
+    }
 }
-.form__btn {
+.form-elem__btn {
+    grid-column: 1 / 4;
 }
 .btn {
+    height: vw(56px);
+    border-radius: vw(20px);
+    background-color: #f1ab87;
+    width: 100%;
+    color: #ffffff;
+    font-size: vw(30px);
+    font-weight: 700;
+    margin-top: vw(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+        background-color: #ef9264;
+    }
 }
 .checkbox {
+    @include checkbox;
 }
 .block-text {
+    width: vw(540px);
+    min-height: vw(340px);
+    border-radius: vw(20px);
+    border: 1px solid #000000;
+    background-color: #f9fbed;
+    padding: vw(30px) vw(70px);
+    color: #000000;
+    font-size: vw(37px);
+    font-weight: 400;
+    line-height: vw(44px);
+    div {
+        display: flex;
+        font-size: vw(25px);
+        line-height: vw(28px);
+        margin-top: vw(26px);
+        gap: vw(22px);
+        p {
+            max-width: vw(248px);
+        }
+        img {
+            width: vw(68px);
+            height: vw(62px);
+        }
+    }
 }

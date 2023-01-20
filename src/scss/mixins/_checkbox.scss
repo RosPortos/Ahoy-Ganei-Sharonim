@@ -1,23 +1,32 @@
 @mixin checkbox() {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: vw(10px);
+    color: #000000;
+    font-size: vw(25px);
+    font-weight: 400;
     input {
         appearance: none;
-        width: 24px;
-        height: 24px;
-        border: 1px solid #000;
+        width: vw(20px);
+        height: vw(20px);
+        border: 1px solid #000000;
         position: relative;
+        background-color: #fff;
+        cursor: pointer;
         &::before {
             content: "";
             position: absolute;
             background-repeat: no-repeat;
-            background-size: auto;
+            background-size: contain;
             background-position: center;
-            width: 100%;
-            height: 100%;
+            background-image: url("../img/icon/check-icon.png");
+            width: vw(16px);
+            height: vw(12px);
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
         &:checked::before {
             opacity: 1;

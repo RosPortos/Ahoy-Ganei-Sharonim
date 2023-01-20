@@ -1,6 +1,58 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded', function () {});
+document.addEventListener('DOMContentLoaded', function () {
+  function promoAcc() {
+    var itemLength = $('.promo-item').length;
+    var flex = document.querySelector(':root');
+    flex.style.setProperty('--flex', itemLength);
+    $('.promo-item').on('click', function () {
+      $(this).addClass('promo-item--active').siblings().removeClass('promo-item--active');
+    });
+  }
+  promoAcc();
+  function videoBlock() {
+    var player;
+    function createVideo(videoBlockId, videoId) {
+      player = new YT.Player(videoBlockId, {
+        videoId: videoId,
+        playerVars: {
+          autohide: 1,
+          showinfo: 0,
+          rel: 0,
+          loop: 1,
+          playsinline: 1,
+          fs: 1,
+          allowsInlineMediaPlayback: true
+        },
+        events: {
+          onReady: function onReady(e) {
+            setTimeout(function () {
+              e.target.playVideo();
+            }, 200);
+          }
+        }
+      });
+    }
+    $("[data-video-modal]").click(function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var videoId = $(this).data("video-modal");
+      var videoType = $(this).data("video-type");
+      if (videoType == "youtube") {
+        $(".about-top__video").removeClass("vimeo youtube").addClass("youtube").append('<div class="video-iframe" id="' + videoId + '"></div>');
+        createVideo(videoId, videoId);
+        $('.about-top-preview').addClass('hide');
+      } else if (videoType == "vimeo") {
+        $(".about-top__video").removeClass("vimeo youtube").addClass("vimeo").html('<iframe class="video-iframe" allow="autoplay" src="https://player.vimeo.com/video/' + videoId + '?playsinline=1&autoplay=1&transparent=1&app_id=122963">');
+        $('.about-top-preview').addClass('hide');
+      } else if (videoType == "mp4" || videoType == "drive") {
+        $(".about-top__video").removeClass("vimeo youtube").addClass("video").html("\n                        <video controls autoplay playisline>\n                            <source src=\"".concat(videoId, "\">\n                        </video>   \n                "));
+        $('.about-top-preview').addClass('hide');
+      }
+    });
+  }
+  videoBlock();
+});
 "use strict";
 
 //Default pop-up | pop-up for video
@@ -91,6 +143,34 @@ function hideModal(modal) {
   $(modal).removeClass("visible");
   bodyScrolled = $(window).scrollTop();
   $("body").removeClass("active").scrollTop(bodyScrolled).css("padding-right", 0);
+}
+"use strict";
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+var anchors = document.querySelectorAll('a.scroll-to');
+var _iterator = _createForOfIteratorHelper(anchors),
+  _step;
+try {
+  var _loop = function _loop() {
+    var anchor = _step.value;
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var blockID = anchor.getAttribute('href');
+      document.querySelector(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    _loop();
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
 }
 "use strict";
 

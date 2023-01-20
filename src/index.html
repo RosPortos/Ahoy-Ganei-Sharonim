@@ -1,13 +1,13 @@
 @include('partials/head.html')
 
-<div class="page main-page">
+<div class="page main-page" id="page">
 	<main class="main">
 
 		<header class="header">
 			אומנות החיים בדיור מוגן | אומנות החיים של הדיירים שלנו | איך מצטרפים לדיור המוגן שלנו
 		</header>
 
-		<a href="#" class="logo">
+		<a href="#page" class="logo scroll-to">
 			<img loading="lazy" src="img/icon/Big_logo.svg" alt="img">
 		</a>
 
@@ -30,10 +30,10 @@
 					<img loading="lazy" src="img/section/promo-img4.jpg" alt="img">
 				</div>
 			</div>
-			<div class="btn-next-sec"></div>
+			<a href="#about" class="btn-next-sec scroll-to"></a>
 		</section>
 
-		<section class="about sec-border">
+		<section class="about sec-border" id="about">
 			<div class="about-top">
 				<div class="about-top__descr">
 					<h3>
@@ -120,36 +120,50 @@
 					</div>
 				</div>
 			</div>
-			<div class="btn-next-sec"></div>
+			<a href="#page-bottom" class="btn-next-sec scroll-to"></a>
 		</section>
 
-		<div class="page-bottom">
-			<div class="form">
-				<form>
-					<input name="first-name" id="first-name-input" placeholder="שם פרטי" type="text">
-					<input name="last-name" id="last-name-input" placeholder="שם משפחה" type="text">
-					<input name="phone" id="phone-input" placeholder="טלפון" type="tel">
-					<button class="form__btn btn" type="submit">צרו איתי קשר</button>
-					<label class="checkbox">
-						<input type="checkbox">
-						אשמח לקבל מידע בעתיד
-					</label>
-				</form>
-				<div class="block-text">
-					גני שרונים
-					מזמינים אותך ליהנות
-					,מאומנות החיים בדיור מוגן
-					!במחיר היכרות מיוחד
-					<div>
-						<img src="img/icon/block-text-icon.svg" alt="img">
-						<p>
-							דיור מוגן גני שרונים
-							השומרון 61, אבן יהודה
-						</p>
-					</div>
+		<div class="page-bottom" id="page-bottom">
+			<div class="block-text">
+				גני שרונים
+				מזמינים אותך ליהנות
+				,מאומנות החיים בדיור מוגן
+				!במחיר היכרות מיוחד
+				<div>
+					<img src="img/icon/block-text-icon.svg" alt="img">
+					<p>
+						דיור מוגן גני שרונים
+						השומרון 61, אבן יהודה
+					</p>
 				</div>
 			</div>
-
+			<div class="form">
+				<h2>לחיים טובים השאר פרטים</h2>
+				<form>
+					<div class="form__wrapper">
+						<div class="form-elem">
+							<input class="form__input" name="first-name" id="first-name-input" placeholder="שם פרטי"
+								type="text">
+						</div>
+						<div class="form-elem">
+							<input class="form__input" name="last-name" id="last-name-input" placeholder="שם משפחה"
+								type="text">
+						</div>
+						<div class="form-elem">
+							<input class="form__input" name="phone" id="phone-input" placeholder="טלפון" type="tel">
+						</div>
+						<div class="form-elem form-elem__btn">
+							<button class="btn" type="submit">צרו איתי קשר</button>
+						</div>
+						<div class="form-elem form-elem__checkbox">
+							<label class="checkbox">
+								<input type="checkbox">
+								אשמח לקבל מידע בעתיד
+							</label>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 
 	</main>

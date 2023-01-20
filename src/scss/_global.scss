@@ -56,27 +56,94 @@ h1 {
     left: 50%;
     transform: translateX(-50%) translateY(50%);
     bottom: vw(11px);
+    cursor: pointer;
+    z-index: 2;
 }
 
 .play-btn {
-    width: 108px;
-    height: 107px;
+    width: vw(108px);
+    height: vw(107px);
     background-color: #bbe15b89;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-image: url("../img/icon/play-icon.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
+    transition: background-color 0.3s ease-in-out;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../img/icon/play-icon.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        transition: background-color 0.3s ease-in-out;
+        width: vw(32px);
+        height: vw(36px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        background-color: #bbe15b;
+    }
 }
 
 .sec-title {
     text-align: center;
     color: #6bb7b2;
-    font-size: 72px;
+    font-size: vw(72px);
     font-weight: 700;
-    line-height: 67px;
+    line-height: vw(67px);
+}
+
+.thanks {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../img/decor/decor4.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: vw(678px);
+        height: vw(926px);
+        z-index: -1;
+        left: vw(-97px);
+        bottom: vw(-587px);
+        pointer-events: none;
+    }
+    h1 {
+        span {
+            color: #cddb75;
+        }
+    }
+    p {
+        color: #000000;
+        font-size: vw(26px);
+        font-weight: 400;
+        line-height: vw(31px);
+        margin-top: vw(40px);
+    }
+    .btn {
+        width: vw(466px);
+        margin-top: vw(65px);
+        height: vw(82px);
+        gap: vw(20px);
+        img {
+            width: vw(36px);
+            height: vw(35px);
+        }
+    }
+}
+
+.page-thanks {
+    .main {
+        height: 91vh;
+    }
 }
