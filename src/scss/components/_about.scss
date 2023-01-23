@@ -2,6 +2,22 @@
     margin-top: vw(28px);
     padding: vw(122px) vw(84px) vw(72px);
     position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../img/decor/decor1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 420px;
+        height: 235px;
+        z-index: -1;
+        left: -257px;
+        top: -162px;
+        opacity: 1;
+        pointer-events: none;
+        transform: rotate(38deg) rotateX(180deg);
+        display: none;
+    }
 }
 
 .about-top {
@@ -182,21 +198,46 @@
 
 @media (max-width: $table) {
     .about {
-        margin-top: vw(145px, 1);
-        padding: vw(35px, 1) vw(18px, 1);
+        margin-top: vw(127px, 1);
+        padding: vw(41px, 1) vw(18px, 1) vw(21px, 1);
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url("../../img/icon/line.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: vw(57px, 1);
+            height: vw(186px, 1);
+            z-index: 200;
+            top: vw(-156px, 1);
+            left: 50%;
+            transform: translateX(-60%);
+        }
+        &::before {
+            display: block;
+        }
     }
     .about-top {
         &::after {
             display: none;
         }
+        &::before {
+            left: inherit;
+            right: vw(-542px, 1);
+            top: vw(-265px, 1);
+            bottom: 0;
+            width: vw(643px, 1);
+            height: vw(574px, 1);
+        }
     }
     .about-top__video {
         width: 100%;
         height: vw(200px, 1);
-        margin-top: vw(15px, 1);
+        margin-top: vw(10px, 1);
     }
     .about-top__descr {
         width: 100%;
+        margin-right: 0;
         h3 {
             font-size: vw(25px, 1);
             line-height: vw(26px, 1);
@@ -204,7 +245,7 @@
         p {
             font-size: vw(17px, 1);
             line-height: vw(21px, 1);
-            margin-top: vw(15px, 1);
+            margin-top: vw(12px, 1);
             b {
                 font-size: vw(20px, 1);
                 line-height: vw(22px, 1);
@@ -213,6 +254,36 @@
     }
     .about-list {
         margin-top: vw(77px, 1);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url("../img/decor/decor4.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: vw(345px, 1);
+            height: vw(300px, 1);
+            z-index: -1;
+            right: vw(-94px, 1);
+            top: vw(-96px, 1);
+            pointer-events: none;
+            transform: rotate(144deg);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url("../img/decor/decor3.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: vw(426px, 1);
+            height: vw(503px, 1);
+            z-index: -1;
+            left: vw(-265px, 1);
+            bottom: vw(-60px, 1);
+            pointer-events: none;
+            transform: rotate(110deg);
+            opacity: 0.6;
+        }
     }
     .about-list-item__video {
         height: vw(286px, 1);
@@ -228,7 +299,8 @@
         }
     }
     .about-list .slider-nav {
-        margin-top: vw(35px, 1);
+        width: calc(100% - 10px);
+        margin: vw(35px, 1) auto 0;
     }
     .about-list .swiper-scrollbar {
         height: vw(3px, 1);

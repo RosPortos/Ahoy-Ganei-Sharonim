@@ -183,3 +183,16 @@
         right: vw(-12px);
     }
 }
+
+@media (max-width: $table) {
+    .video-modal .modal-close {
+        top: -7.083333vw;
+        right: 1.375vw;
+        width: 6.291667vw;
+        height: 6.291667vw;
+    }
+    .modal-close:before,
+    .modal-close:after {
+        width: 5.770833vw;
+    }
+}

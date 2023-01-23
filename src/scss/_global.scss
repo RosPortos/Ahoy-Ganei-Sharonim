@@ -148,11 +148,17 @@ h1 {
     }
 }
 
+.mob-bottom {
+    display: none;
+}
+
 @media (max-width: $table) {
     h1 {
         font-size: vw(60px, 1);
         line-height: vw(49px, 1);
         margin-top: 0;
+        display: flex;
+        flex-direction: column-reverse;
         span {
             color: #cddb75;
             display: block;
@@ -167,8 +173,23 @@ h1 {
     }
 
     .page {
-        padding-top: vw(108px, 1);
-        padding: vw(88px, 1) vw(8px, 1);
+        padding: vw(106px, 1) vw(9px, 1) vw(88px, 1);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url("../img/decor/decor1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: vw(420px, 1);
+            height: vw(235px, 1);
+            z-index: -1;
+            left: vw(-283px, 1);
+            top: vw(-59px, 1);
+            opacity: 1;
+            pointer-events: none;
+            transform: rotate(-34deg);
+        }
     }
 
     .sec-border {
@@ -186,6 +207,89 @@ h1 {
         &::before {
             width: vw(23px, 1);
             height: vw(29px, 1);
+        }
+    }
+    .mob-bottom {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: vw(53px, 1);
+        box-shadow: 0 -1px vw(6px, 1) rgba(0, 0, 0, 0.12);
+        background-color: #ffffff;
+        display: block;
+        z-index: 2222;
+        color: #000000;
+        font-size: vw(32px, 1);
+        font-weight: 700;
+        line-height: vw(32px, 1);
+        border-radius: vw(20px, 1) vw(20px, 1) 0 0;
+        overflow: hidden;
+        text-align: center;
+        padding: vw(10px, 1);
+        padding-right: vw(92px, 1);
+        display: flex;
+        justify-content: center;
+        &::after {
+            position: absolute;
+            content: "";
+            background-image: url("../img/icon/phone.svg");
+            background-repeat: no-repeat;
+            background-size: vw(42px, 1) vw(43px, 1);
+            background-position: center;
+            width: vw(92px, 1);
+            height: vw(53px, 1);
+            display: block;
+            right: 0;
+            top: 0;
+            background-color: #6bb7b2;
+            padding: vw(30px, 1);
+        }
+    }
+    .btn-next-sec {
+        display: none;
+    }
+
+    .page-thanks {
+        padding: 0;
+        .logo {
+            width: 72.111111vw;
+            height: 42.555556vw;
+            right: -19.166667vw;
+            top: -3.8888888889vw;
+        }
+    }
+    .thanks {
+        padding: vw(192px, 1) vw(15px, 1) vw(83px, 1);
+        height: 100vh;
+        justify-content: space-between;
+        &::before {
+            background-image: url(../img/decor/decor2.svg);
+            width: 147.888889vw;
+            height: 115.555556vw;
+            right: -73.555556vw;
+            bottom: -41.611111vw;
+            top: inherit;
+            opacity: 0.4;
+        }
+        h1 {
+            flex-direction: column;
+        }
+    }
+    .thanks p {
+        font-size: 20px;
+        line-height: 120%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    .thanks .btn {
+        width: 298px;
+        height: 64px;
+        font-size: 20px;
+        gap: 15px;
+        img {
+            width: 25px;
+            height: 25px;
         }
     }
 }
