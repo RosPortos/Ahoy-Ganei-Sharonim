@@ -97,3 +97,41 @@
         }
     }
 }
+
+@media (max-width: $table) {
+    .page-bottom {
+        margin-top: vw(75px, 1);
+        flex-direction: column-reverse;
+        gap: vw(37px, 1);
+    }
+    .form {
+        width: 100%;
+        padding: vw(48px, 1) vw(12px, 1) vw(40px, 1);
+        form {
+            margin-top: vw(16px, 1);
+        }
+        h2 {
+            font-size: vw(22px, 1);
+            letter-spacing: vw(0.46px, 1);
+            line-height: vw(20px, 1);
+        }
+        .form__input {
+            height: vw(38px, 1);
+            font-size: vw(18px, 1);
+            padding: 0 vw(24px, 1);
+        }
+    }
+    .form .form__wrapper {
+        grid-template-columns: 1fr;
+        gap: vw(10px, 1);
+    }
+    .form-elem__btn {
+        grid-column: 1 / 2;
+    }
+    .btn {
+        font-size: vw(30px, 1);
+        height: vw(65px, 1);
+        margin-top: vw(15px, 1);
+        border-radius: vw(20px, 1);
+    }
+}

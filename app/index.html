@@ -22,11 +22,14 @@
 		</header>
 
 		<a href="#page" class="logo scroll-to">
-			<img loading="lazy" src="img/icon/Big_logo.svg" alt="img">
+			<picture>
+				<source media="(max-width: 991px)" srcset="img/icon/logo-mob.svg">
+				<img loading="lazy" src="img/icon/Big_logo.svg" alt="img">
+			</picture>
 		</a>
 
 		<h1 class="main-title">
-			לחיות טוב זו אומנות
+			<span>זו אומנות</span> לחיות טוב
 		</h1>
 
 		<section class="promo sec-border">
@@ -65,7 +68,7 @@
 						.כי לחיות טוב זו אומנות
 					</p>
 				</div>
-				<div class="about-top__video">
+				<div class="about-top__video" data-da=".about-top__descr, 991, 1">
 					<div class="about-top-preview">
 						<img src="img/section/about-top-img.png" alt="img">
 						<button class="play-btn" data-video-type="youtube" data-video-modal="-KH6ZSavJ6Y"></button>
@@ -177,6 +180,17 @@
 						</div>
 					</div>
 				</form>
+			</div>
+		</div>
+
+		<div class="modal video-modal" id="video-modal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<button class="modal-close" aria-label="Close modal"></button>
+					<div class="modal-video">
+						<div id="modal-video-iframe"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 
