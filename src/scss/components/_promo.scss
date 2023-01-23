@@ -47,3 +47,10 @@
     max-width: vw(920px);
     opacity: 1;
 }
+
+@media (max-width: $table) {
+    .promo {
+        opacity: 0;
+        height: vw(327px, 1);
+    }
+}

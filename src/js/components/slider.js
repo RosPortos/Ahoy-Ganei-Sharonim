@@ -1,6 +1,6 @@
 const swiper = new Swiper(".about-list-swiper", {
     slidesPerView: 'auto',
-    speed: 1000,
+    speed: 800,
     scrollbar: {
         el: ".swiper-scrollbar",
         hide: false,
@@ -10,11 +10,14 @@ const swiper = new Swiper(".about-list-swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    /* breakpoints: {
-        1150: {
-            slidesPerView: 3,
+    breakpoints: {
+        991: {
+            slidesPerView: 'auto',
         },
-    }, */
+        300: {
+            slidesPerView: 1,
+        },
+    },
 });
 
 

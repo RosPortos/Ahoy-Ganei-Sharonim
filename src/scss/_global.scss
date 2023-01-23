@@ -76,7 +76,7 @@ h1 {
         background-image: url("../img/icon/play-icon.svg");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: contain;
         transition: background-color 0.3s ease-in-out;
         width: vw(32px);
         height: vw(36px);
@@ -145,5 +145,47 @@ h1 {
 .page-thanks {
     .main {
         height: 91vh;
+    }
+}
+
+@media (max-width: $table) {
+    h1 {
+        font-size: vw(60px, 1);
+        line-height: vw(49px, 1);
+        margin-top: 0;
+        span {
+            color: #cddb75;
+            display: block;
+        }
+    }
+
+    .logo {
+        width: vw(184px, 1);
+        height: vw(110px, 1);
+        right: vw(-51px, 1);
+        top: vw(-14px, 1);
+    }
+
+    .page {
+        padding-top: vw(108px, 1);
+        padding: vw(88px, 1) vw(8px, 1);
+    }
+
+    .sec-border {
+        border-radius: vw(20px, 1);
+    }
+
+    .sec-title {
+        font-size: vw(25px, 1);
+        line-height: vw(32px, 1);
+    }
+
+    .play-btn {
+        width: vw(75px, 1);
+        height: vw(75px, 1);
+        &::before {
+            width: vw(23px, 1);
+            height: vw(29px, 1);
+        }
     }
 }
