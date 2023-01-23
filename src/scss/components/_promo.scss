@@ -3,6 +3,20 @@
     position: relative;
     height: vw(587px);
     position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s linear;
+    &.anim {
+        opacity: 1;
+        visibility: visible;
+    }
+    &.anim-start {
+        .promo-item--active {
+            flex: var(--flex);
+            max-width: vw(920px);
+            opacity: 1;
+        }
+    }
     &::before {
         content: "";
         position: absolute;
@@ -42,15 +56,9 @@
     }
 }
 
-.promo-item--active {
-    flex: var(--flex);
-    max-width: vw(920px);
-    opacity: 1;
-}
-
 @media (max-width: $table) {
     .promo {
-        opacity: 0;
+        opacity: 0 !important;
         height: vw(327px, 1);
     }
 }

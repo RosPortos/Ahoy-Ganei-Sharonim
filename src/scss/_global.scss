@@ -14,6 +14,16 @@ body {
     overflow: hidden;
     min-height: 100vh;
     padding: 0 vw(60px) vw(50px);
+    animation: fide 2s linear 0s 1 normal forwards;
+}
+
+@keyframes fide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 h1 {

@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   promoAcc();
+  setTimeout(function () {
+    document.querySelector('.promo').classList.add('anim');
+    setTimeout(function () {
+      document.querySelector('.promo').classList.add('anim-start');
+    }, 1000);
+  }, 1500);
   function videoBlock() {
     var playButton = document.querySelector(".about-top__video .play-btn");
     var previeBlock = document.querySelector('.about-top-preview');

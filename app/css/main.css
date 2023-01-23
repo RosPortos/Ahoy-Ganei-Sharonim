@@ -122,8 +122,17 @@ body.scroll-hide {
   overflow: hidden;
   min-height: 100vh;
   padding: 0 3.125vw 2.6041666667vw;
+  animation: fide 2s linear 0s 1 normal forwards;
 }
 
+@keyframes fide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 h1 {
   color: #6bb7b2;
   font-size: 5.3125vw;
@@ -412,6 +421,18 @@ h1 {
   position: relative;
   height: 30.5729166667vw;
   position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s linear;
+}
+.promo.anim {
+  opacity: 1;
+  visibility: visible;
+}
+.promo.anim-start .promo-item--active {
+  flex: var(--flex);
+  max-width: 47.9166666667vw;
+  opacity: 1;
 }
 .promo::before {
   content: "";
@@ -454,15 +475,9 @@ h1 {
   display: block;
 }
 
-.promo-item--active {
-  flex: var(--flex);
-  max-width: 47.9166666667vw;
-  opacity: 1;
-}
-
 @media (max-width: 991px) {
   .promo {
-    opacity: 0;
+    opacity: 0 !important;
     height: 90.8333333333vw;
   }
 }

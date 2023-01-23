@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     promoAcc();
 
+    setTimeout(function () {
+        document.querySelector('.promo').classList.add('anim');
+        setTimeout(function () {
+            document.querySelector('.promo').classList.add('anim-start');
+        }, 1000);
+    }, 1500);
+
 
     function videoBlock() {
 
