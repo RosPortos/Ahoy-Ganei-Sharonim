@@ -29,6 +29,65 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1500);
     }
 
+    if ($(window).width() > 991) {
+        function anim() {
+            const promoItem = document.querySelectorAll('.promo-item')
+            const promoItemFirst = promoItem[0].querySelector('img');
+
+            function pointerNone() {
+                promoItem.forEach(item => {
+                    item.classList.add('pointer-non')
+                    setTimeout(() => item.classList.remove('pointer-non'), 800)
+                })
+            }
+
+            promoItem.forEach((item, i) => {
+                item.addEventListener('click', function (e) {
+
+                    let img = item.querySelector('img');
+                    let offsetTopImg = item.offsetTop;
+                    let imgSrc = img.getAttribute('src');
+
+                    let bigSrc = promoItemFirst.getAttribute('src')
+
+                    let div = document.createElement('div')
+                    div.innerHTML = `<img src="${imgSrc}">`
+                    div.classList.add('abs-img')
+                    item.append(div)
+
+                    img.setAttribute('src', bigSrc)
+
+                    /* setTimeout(() => img.setAttribute('src', bigSrc), 400) */
+
+                    let widthActive = promoItemFirst.clientWidth;
+                    let heightActive = promoItemFirst.clientHeight;
+
+                    gsap.to(div, {
+                        duration: 0.5,
+                        opacity: 1,
+                        ease: "power1.out",
+                        x: -widthActive - 8,
+                        width: widthActive,
+                        height: heightActive,
+                        y: -offsetTopImg
+                    });
+
+                    pointerNone();
+
+                    setTimeout(function () {
+                        div.remove()
+                        promoItemFirst.setAttribute('src', imgSrc)
+                    }, 800);
+                });
+            });
+        }
+
+        anim();
+    }
+
+
+
+
 
     function videoBlock() {
 
