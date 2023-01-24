@@ -56,9 +56,48 @@
     }
 }
 
+.promo-mob {
+    display: none;
+}
+
 @media (max-width: $table) {
     .promo {
-        opacity: 0 !important;
-        height: vw(327px, 1);
+        height: inherit;
+        opacity: 1;
+        visibility: visible;
+        border: none;
     }
+    .promo__wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 73px;
+        min-height: 327px;
+        border-radius: 0;
+        direction: ltr;
+        position: relative;
+        column-gap: 8px;
+        row-gap: 6px;
+    }
+    .promo-item {
+        &:first-child {
+            grid-column: 1 / 4;
+            grid-row: 1 / 4;
+            height: 327px;
+        }
+    }
+    .promo-item {
+        opacity: 1;
+        max-width: 100%;
+        height: 105px;
+        img {
+            position: relative;
+        }
+    }
+    /* .promo-mob {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        height: 327px;
+        width: calc(100% - 80px);
+    } */
 }
