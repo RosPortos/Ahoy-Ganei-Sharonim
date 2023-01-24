@@ -81,121 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-    /* function anim() {
-        const promoItem = document.querySelectorAll('.promo-item img')
-        const promoItemActive = document.querySelector('.promo-item--active')
-        let count = 0;
-        const promoItemFirst = promoItem[count];
-
-        console.log(promoItemFirst);
-
-        let widthActive = promoItemFirst.clientWidth;
-        let heightActive = promoItemFirst.clientHeight;
-
-        promoItem.forEach((item, i) => {
-            item.addEventListener('click', function (e) {
-
-                console.log(e.target);
-
-                let widthItem = item.clientWidth;
-                let heightItem = item.clientHeight;
-
-                let img = item.querySelector('img');
-                let offsetTopImg = item.offsetTop;
-
-                let imgPromoItemActive = promoItemFirst.querySelector('img');
-
-                gsap.to(promoItemFirst, {
-                    duration: 0.5,
-                    x: widthActive + 8,
-                    width: widthItem,
-                    height: heightItem,
-                    y: -offsetTopImg
-                });
-
-                gsap.to(item, {
-                    duration: 0.5,
-                    x: -widthActive - 8,
-                    width: widthActive,
-                    height: heightActive,
-                    y: -offsetTopImg
-                });
-
-                count = i;
-
-            });
-        });
-
-        function removeClass() {
-            promoItem.forEach(item => {
-                item.classList.remove('promo-item--active')
-            });
-        }
-
-        removeClass();
-
-
-
-    }
-
-    anim(); */
-
-    /* function anim() {
-        const promoItem = document.querySelectorAll('.promo-item')
-        const promoWrap = document.querySelector('.promo__wrap')
-
-        function removeClass() {
-            promoItem.forEach(item => {
-                item.querySelector('img').classList.remove('big-img')
-            });
-        }
-
-        const bigImg = document.querySelector('.big-img')
-
-
-
-        promoItem.forEach((item, i) => {
-            item.addEventListener('click', function (e) {
-
-                let widthActive = bigImg.clientWidth;
-                let heightActive = bigImg.clientHeight;
-
-                let img = item.querySelector('img');
-                let offsetTopImg = item.offsetTop;
-
-                let widthItem = img.clientWidth;
-                let heightItem = img.clientHeight;
-
-                console.log(bigImg);
-                console.log(offsetTopImg);
-
-                gsap.to(bigImg, {
-                    duration: 0.5,
-                    x: widthActive + 8,
-                    width: widthItem,
-                    height: heightItem,
-                    y: offsetTopImg
-                });
-
-                gsap.to(img, {
-                    duration: 0.5,
-                    x: -widthActive - 8,
-                    width: widthActive,
-                    height: heightActive,
-                    y: -offsetTopImg
-                });
-
-                removeClass();
-                img.classList.add('big-img')
-
-            });
-        });
-    }
-
-    anim(); */
-
-
     function anim() {
         const promoItem = document.querySelectorAll('.promo-item')
         const promoItemFirst = promoItem[0].querySelector('img');
@@ -210,8 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
         promoItem.forEach((item, i) => {
             item.addEventListener('click', function (e) {
 
-                item.classList.add('opacity')
-
                 let img = item.querySelector('img');
                 let offsetTopImg = item.offsetTop;
                 let imgSrc = img.getAttribute('src');
@@ -223,7 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 div.classList.add('abs-img')
                 item.append(div)
 
-                setTimeout(() => img.setAttribute('src', bigSrc), 300)
+                img.setAttribute('src', bigSrc)
+
+                /* setTimeout(() => img.setAttribute('src', bigSrc), 400) */
 
                 let widthActive = promoItemFirst.clientWidth;
                 let heightActive = promoItemFirst.clientHeight;
@@ -241,12 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 pointerNone();
 
                 setTimeout(function () {
-                    item.classList.remove('opacity')
                     div.remove()
                     promoItemFirst.setAttribute('src', imgSrc)
                 }, 800);
-
-
             });
         });
     }
