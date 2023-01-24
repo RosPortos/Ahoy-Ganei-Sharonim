@@ -100,49 +100,91 @@ document.addEventListener('DOMContentLoaded', function () {
   }
     anim(); */
 
+  /* function anim() {
+      const promoItem = document.querySelectorAll('.promo-item')
+      const promoWrap = document.querySelector('.promo__wrap')
+        function removeClass() {
+          promoItem.forEach(item => {
+              item.querySelector('img').classList.remove('big-img')
+          });
+      }
+        const bigImg = document.querySelector('.big-img')
+  
+      promoItem.forEach((item, i) => {
+          item.addEventListener('click', function (e) {
+                let widthActive = bigImg.clientWidth;
+              let heightActive = bigImg.clientHeight;
+                let img = item.querySelector('img');
+              let offsetTopImg = item.offsetTop;
+                let widthItem = img.clientWidth;
+              let heightItem = img.clientHeight;
+                console.log(bigImg);
+              console.log(offsetTopImg);
+                gsap.to(bigImg, {
+                  duration: 0.5,
+                  x: widthActive + 8,
+                  width: widthItem,
+                  height: heightItem,
+                  y: offsetTopImg
+              });
+                gsap.to(img, {
+                  duration: 0.5,
+                  x: -widthActive - 8,
+                  width: widthActive,
+                  height: heightActive,
+                  y: -offsetTopImg
+              });
+                removeClass();
+              img.classList.add('big-img')
+            });
+      });
+  }
+    anim(); */
+
   function anim() {
     var promoItem = document.querySelectorAll('.promo-item');
-    var promoItemFirst = promoItem[0];
-    var widthActive = promoItemFirst.clientWidth;
-    var heightActive = promoItemFirst.clientHeight;
+    var promoItemFirst = promoItem[0].querySelector('img');
+    function pointerNone() {
+      promoItem.forEach(function (item) {
+        item.classList.add('pointer-non');
+        setTimeout(function () {
+          return item.classList.remove('pointer-non');
+        }, 800);
+      });
+    }
     promoItem.forEach(function (item, i) {
       item.addEventListener('click', function (e) {
-        /* console.log(e.target); */
-
-        var widthItem = item.clientWidth;
-        var heightItem = item.clientHeight;
+        item.classList.add('opacity');
         var img = item.querySelector('img');
         var offsetTopImg = item.offsetTop;
-        var imgPromoItemActive = promoItemFirst.querySelector('img');
-        gsap.to(promoItemFirst, {
+        var imgSrc = img.getAttribute('src');
+        var bigSrc = promoItemFirst.getAttribute('src');
+        var div = document.createElement('div');
+        div.innerHTML = "<img src=\"".concat(imgSrc, "\">");
+        div.classList.add('abs-img');
+        item.append(div);
+        setTimeout(function () {
+          return img.setAttribute('src', bigSrc);
+        }, 300);
+        var widthActive = promoItemFirst.clientWidth;
+        var heightActive = promoItemFirst.clientHeight;
+        gsap.to(div, {
           duration: 0.5,
-          x: widthActive + 8,
-          width: widthItem,
-          height: heightItem,
-          y: -offsetTopImg
-        });
-        gsap.to(img, {
-          duration: 0.5,
+          opacity: 1,
+          ease: "power1.out",
           x: -widthActive - 8,
           width: widthActive,
           height: heightActive,
           y: -offsetTopImg
         });
-        count = i;
-
-        /* setTimeout(function () {
-            removeClass();
-            item.classList.add('promo-item--active')
-        }, 1000) */
+        pointerNone();
+        setTimeout(function () {
+          item.classList.remove('opacity');
+          div.remove();
+          promoItemFirst.setAttribute('src', imgSrc);
+        }, 800);
       });
     });
-
-    function removeClass() {
-      promoItem.forEach(function (item) {
-        item.classList.remove('promo-item--active');
-      });
-    }
-    removeClass();
   }
   anim();
 });

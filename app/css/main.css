@@ -479,6 +479,17 @@ h1 {
   display: none;
 }
 
+.abs-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 22;
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media (max-width: 991px) {
   .promo {
     height: inherit;
@@ -497,27 +508,27 @@ h1 {
     column-gap: 8px;
     row-gap: 6px;
   }
+  .promo-item {
+    opacity: 1;
+    max-width: 100%;
+    height: 105px;
+    position: relative;
+  }
   .promo-item:first-child {
     grid-column: 1/4;
     grid-row: 1/4;
     height: 327px;
   }
-  .promo-item {
-    opacity: 1;
-    max-width: 100%;
-    height: 105px;
+  .promo-item.opacity > img {
+    opacity: 0.5;
+  }
+  .promo-item.pointer-non {
+    pointer-events: none;
   }
   .promo-item img {
-    position: relative;
+    position: absolute;
+    transition: opacity 0.8s ease-in-out;
   }
-  /* .promo-mob {
-      position: absolute;
-      display: block;
-      left: 0;
-      top: 0;
-      height: 327px;
-      width: calc(100% - 80px);
-  } */
 }
 .about {
   margin-top: 1.4583333333vw;

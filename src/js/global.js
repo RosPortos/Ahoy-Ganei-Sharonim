@@ -141,32 +141,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
     anim(); */
 
-    function anim() {
+    /* function anim() {
         const promoItem = document.querySelectorAll('.promo-item')
-        const promoItemFirst = promoItem[0];
+        const promoWrap = document.querySelector('.promo__wrap')
 
-        let widthActive = promoItemFirst.clientWidth;
-        let heightActive = promoItemFirst.clientHeight;
+        function removeClass() {
+            promoItem.forEach(item => {
+                item.querySelector('img').classList.remove('big-img')
+            });
+        }
+
+        const bigImg = document.querySelector('.big-img')
+
+
 
         promoItem.forEach((item, i) => {
             item.addEventListener('click', function (e) {
 
-                /* console.log(e.target); */
-
-                let widthItem = item.clientWidth;
-                let heightItem = item.clientHeight;
+                let widthActive = bigImg.clientWidth;
+                let heightActive = bigImg.clientHeight;
 
                 let img = item.querySelector('img');
                 let offsetTopImg = item.offsetTop;
 
-                let imgPromoItemActive = promoItemFirst.querySelector('img');
+                let widthItem = img.clientWidth;
+                let heightItem = img.clientHeight;
 
-                gsap.to(promoItemFirst, {
+                console.log(bigImg);
+                console.log(offsetTopImg);
+
+                gsap.to(bigImg, {
                     duration: 0.5,
                     x: widthActive + 8,
                     width: widthItem,
                     height: heightItem,
-                    y: -offsetTopImg
+                    y: offsetTopImg
                 });
 
                 gsap.to(img, {
@@ -177,28 +186,71 @@ document.addEventListener('DOMContentLoaded', function () {
                     y: -offsetTopImg
                 });
 
-                count = i;
+                removeClass();
+                img.classList.add('big-img')
 
-                /* setTimeout(function () {
-                    removeClass();
-                    item.classList.add('promo-item--active')
-                }, 1000) */
             });
         });
+    }
 
-        function removeClass() {
+    anim(); */
+
+
+    function anim() {
+        const promoItem = document.querySelectorAll('.promo-item')
+        const promoItemFirst = promoItem[0].querySelector('img');
+
+        function pointerNone() {
             promoItem.forEach(item => {
-                item.classList.remove('promo-item--active')
-            });
+                item.classList.add('pointer-non')
+                setTimeout(() => item.classList.remove('pointer-non'), 800)
+            })
         }
 
-        removeClass();
+        promoItem.forEach((item, i) => {
+            item.addEventListener('click', function (e) {
+
+                item.classList.add('opacity')
+
+                let img = item.querySelector('img');
+                let offsetTopImg = item.offsetTop;
+                let imgSrc = img.getAttribute('src');
+
+                let bigSrc = promoItemFirst.getAttribute('src')
+
+                let div = document.createElement('div')
+                div.innerHTML = `<img src="${imgSrc}">`
+                div.classList.add('abs-img')
+                item.append(div)
+
+                setTimeout(() => img.setAttribute('src', bigSrc), 300)
+
+                let widthActive = promoItemFirst.clientWidth;
+                let heightActive = promoItemFirst.clientHeight;
+
+                gsap.to(div, {
+                    duration: 0.5,
+                    opacity: 1,
+                    ease: "power1.out",
+                    x: -widthActive - 8,
+                    width: widthActive,
+                    height: heightActive,
+                    y: -offsetTopImg
+                });
+
+                pointerNone();
+
+                setTimeout(function () {
+                    item.classList.remove('opacity')
+                    div.remove()
+                    promoItemFirst.setAttribute('src', imgSrc)
+                }, 800);
 
 
-
+            });
+        });
     }
 
     anim();
-
 
 });

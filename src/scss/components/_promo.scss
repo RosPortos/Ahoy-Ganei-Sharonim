@@ -60,6 +60,17 @@
     display: none;
 }
 
+.abs-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 22;
+    opacity: 0;
+    pointer-events: none;
+}
+
 @media (max-width: $table) {
     .promo {
         height: inherit;
@@ -78,26 +89,27 @@
         row-gap: 6px;
     }
     .promo-item {
+        opacity: 1;
+        max-width: 100%;
+        height: 105px;
+        position: relative;
+
         &:first-child {
             grid-column: 1 / 4;
             grid-row: 1 / 4;
             height: 327px;
         }
-    }
-    .promo-item {
-        opacity: 1;
-        max-width: 100%;
-        height: 105px;
+        &.opacity {
+            > img {
+                opacity: 0.5;
+            }
+        }
+        &.pointer-non {
+            pointer-events: none;
+        }
         img {
-            position: relative;
+            position: absolute;
+            transition: opacity 0.8s ease-in-out;
         }
     }
-    /* .promo-mob {
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        height: 327px;
-        width: calc(100% - 80px);
-    } */
 }
