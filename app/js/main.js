@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 1000);
     }, 1500);
   }
-  if ($(window).width() > 991) {
+  if ($(window).width() <= 991) {
     var anim = function anim() {
       var promoItem = document.querySelectorAll('.promo-item');
       var promoItemFirst = promoItem[0].querySelector('img');
@@ -41,9 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
           div.classList.add('abs-img');
           item.append(div);
           img.setAttribute('src', bigSrc);
-
-          /* setTimeout(() => img.setAttribute('src', bigSrc), 400) */
-
           var widthActive = promoItemFirst.clientWidth;
           var heightActive = promoItemFirst.clientHeight;
           gsap.to(div, {

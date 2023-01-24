@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1500);
     }
 
-    if ($(window).width() > 991) {
+    if ($(window).width() <= 991) {
         function anim() {
             const promoItem = document.querySelectorAll('.promo-item')
             const promoItemFirst = promoItem[0].querySelector('img');
@@ -56,8 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     item.append(div)
 
                     img.setAttribute('src', bigSrc)
-
-                    /* setTimeout(() => img.setAttribute('src', bigSrc), 400) */
 
                     let widthActive = promoItemFirst.clientWidth;
                     let heightActive = promoItemFirst.clientHeight;
