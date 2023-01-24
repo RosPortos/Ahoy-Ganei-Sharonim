@@ -93,19 +93,22 @@
         max-width: 100%;
         height: 105px;
         position: relative;
-        opacity: 0.34;
         &:first-child {
             grid-column: 1 / 4;
             grid-row: 1 / 4;
             height: 327px;
-            opacity: 1;
+
+            img {
+                opacity: 1;
+            }
         }
         &.pointer-non {
             pointer-events: none;
         }
-        img {
+        > img {
             position: absolute;
             transition: opacity 0.8s ease-in-out;
+            opacity: 0.34;
         }
     }
 }
