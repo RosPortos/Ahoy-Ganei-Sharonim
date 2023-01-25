@@ -165,14 +165,14 @@ h1 {
 }
 
 .btn-next-sec {
-  width: 2.0833333333vw;
-  height: 5.15625vw;
+  width: 3.0729166667vw;
+  height: 6.1458333333vw;
   background-image: url("../img/icon/btn-next-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(50%);
+  transform: translateX(-35%) translateY(50%);
   bottom: 0.5729166667vw;
   cursor: pointer;
   z-index: 2;
@@ -272,11 +272,14 @@ h1 {
     line-height: 13.6111111111vw;
     margin-top: 0;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   h1 span {
     color: #cddb75;
     display: block;
+  }
+  .page-thanks h1 {
+    flex-direction: column-reverse;
   }
   .logo {
     width: 51.1111111111vw;
@@ -443,9 +446,9 @@ h1 {
   width: 46.6145833333vw;
   height: 22.2395833333vw;
   z-index: -1;
-  left: 56%;
+  left: 57%;
   transform: translateX(-50%);
-  top: -4.1145833333vw;
+  top: -3.4375vw;
   pointer-events: none;
 }
 
@@ -533,7 +536,7 @@ h1 {
 }
 .about {
   margin-top: 1.4583333333vw;
-  padding: 6.3541666667vw 4.375vw 3.75vw;
+  padding: 6.3541666667vw 4.375vw 2.9166666667vw;
   position: relative;
 }
 .about::before {
@@ -551,6 +554,9 @@ h1 {
   pointer-events: none;
   transform: rotate(38deg) rotateX(180deg);
   display: none;
+}
+.about .btn-next-sec {
+  bottom: -0.427083vw;
 }
 
 .about-top {
@@ -858,7 +864,7 @@ h1 {
   }
 }
 .page-bottom {
-  margin-top: 9.375vw;
+  margin-top: 9.8958333333vw;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -873,7 +879,7 @@ h1 {
   height: 35.541667vw;
   z-index: -1;
   right: 12.2916666667vw;
-  top: -23.4895833333vw;
+  top: -22.4479166667vw;
   pointer-events: none;
 }
 
@@ -881,7 +887,7 @@ h1 {
   width: 58.59375vw;
   min-height: 17.7083333333vw;
   background-color: #f8e7d4;
-  padding: 1.5625vw 3.6458333333vw 2.4479166667vw;
+  padding: 1.8229166667vw 3.6458333333vw 2.4479166667vw;
 }
 .form h2 {
   color: #000000;
@@ -890,7 +896,7 @@ h1 {
   text-align: center;
 }
 .form form {
-  margin-top: 1.09375vw;
+  margin-top: 1.3020833333vw;
 }
 .form .form__wrapper {
   display: grid;
@@ -985,7 +991,7 @@ h1 {
   display: flex;
   font-size: 1.3020833333vw;
   line-height: 1.4583333333vw;
-  margin-top: 1.3541666667vw;
+  margin-top: 2.0833333333vw;
   gap: 1.1458333333vw;
 }
 .block-text div p {
@@ -994,6 +1000,7 @@ h1 {
 .block-text div img {
   width: 3.5416666667vw;
   height: 3.2291666667vw;
+  transform: translateY(-9px);
 }
 
 @media (max-width: 991px) {

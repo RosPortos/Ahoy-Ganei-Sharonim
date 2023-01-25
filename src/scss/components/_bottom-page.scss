@@ -1,5 +1,5 @@
 .page-bottom {
-    margin-top: vw(180px);
+    margin-top: vw(190px);
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -13,7 +13,7 @@
         height: 35.541667vw;
         z-index: -1;
         right: vw(236px);
-        top: vw(-451px);
+        top: vw(-431px);
         pointer-events: none;
     }
 }
@@ -21,7 +21,7 @@
     width: vw(1125px);
     min-height: vw(340px);
     background-color: #f8e7d4;
-    padding: vw(30px) vw(70px) vw(47px);
+    padding: vw(35px) vw(70px) vw(47px);
     h2 {
         color: #000000;
         font-size: vw(40px);
@@ -29,7 +29,7 @@
         text-align: center;
     }
     form {
-        margin-top: vw(21px);
+        margin-top: vw(25px);
     }
     .form__wrapper {
         display: grid;
@@ -86,7 +86,7 @@
         display: flex;
         font-size: vw(25px);
         line-height: vw(28px);
-        margin-top: vw(26px);
+        margin-top: vw(40px);
         gap: vw(22px);
         p {
             max-width: vw(248px);
@@ -94,6 +94,7 @@
         img {
             width: vw(68px);
             height: vw(62px);
+            transform: translateY(-9px);
         }
     }
 }

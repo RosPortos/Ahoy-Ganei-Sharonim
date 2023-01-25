@@ -1,6 +1,6 @@
 .about {
     margin-top: vw(28px);
-    padding: vw(122px) vw(84px) vw(72px);
+    padding: vw(122px) vw(84px) vw(56px);
     position: relative;
     &::before {
         content: "";
@@ -17,6 +17,9 @@
         pointer-events: none;
         transform: rotate(38deg) rotateX(180deg);
         display: none;
+    }
+    .btn-next-sec {
+        bottom: -0.427083vw;
     }
 }
 
