@@ -1105,6 +1105,7 @@ h1 {
   .block-text div img {
     width: 18.8888888889vw;
     height: 17.2222222222vw;
+    transform: translateY(0px);
   }
 }
 .modal {
