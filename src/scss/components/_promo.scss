@@ -110,4 +110,7 @@
             opacity: 0.34;
         }
     }
+    .promo::before {
+        display: none;
+    }
 }

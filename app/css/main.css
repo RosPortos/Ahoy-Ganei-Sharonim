@@ -533,6 +533,9 @@ h1 {
     position: absolute;
     opacity: 0.34;
   }
+  .promo::before {
+    display: none;
+  }
 }
 .about {
   margin-top: 1.4583333333vw;
