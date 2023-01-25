@@ -751,7 +751,7 @@ h1 {
   .about::after {
     content: "";
     position: absolute;
-    background-image: url("../../img/icon/line.svg");
+    background-image: url("../img/icon/line.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 15.8333333333vw;
